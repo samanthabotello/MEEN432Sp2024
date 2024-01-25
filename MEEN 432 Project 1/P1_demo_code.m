@@ -3,6 +3,7 @@
 % Project 1 
 
 
+
 % Initial Conditions 
 w_0 = 1.0; % Initial Angular Velocity [rad/s]
 J = 1; % Rotational Inertia [kg-m^2]
