@@ -30,6 +30,21 @@ for i = 1:length(dT)
     end
 end
 
+var_time_step_solver = ["ode45", "ode23tb"]; % variable time step
+
+for k = 1:length(var_time_step_solver)
+    s = solver(k);
+    simout = sim("Project1.slx","Solver",s);
+    W = simout.w.Data;
+    W_DOT = simout.w_dot.Data;
+    T = simout.tout;
+    figure
+    plot(T,W);
+    title("Angular Velocity vs Time")
+    ylabel("Angular velocity [rad/s]")
+    xlabel("Time")
+   % plot(W_DOT,T);
+end
 
 
 
