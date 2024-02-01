@@ -4,10 +4,10 @@
 
 
 % Initial Conditions 
-w_0 = 1.0; % Initial Angular Velocity [rad/s]
+w_0 = 4; % Initial Angular Velocity [rad/s]
 J = 1; % Rotational Inertia [kg-m^2]
 b = 1; % Damping Coefficient [N-m-s/rad]
-A = 1; % Constant Applied Torque [N-m]
+A = 4; % Constant Applied Torque [N-m]
 set_param('Project1', 'StopTime', '25')
 dT = [0.001, 0.1, 1]; % Time Step [s]
 solver = ["ode1", "ode4"]; % Fixed Time Step Solver [Euler]
@@ -21,10 +21,10 @@ for i = 1:length(dT)
         W_DOT = simout.w_dot.Data;
         T = simout.tout;
         figure
-        plot(W,T);
+        plot(T,W);
         title("Angular Velocity vs Time")
-        xlabel("Angular velocity [rad/s]")
-        ylabel("Time")
+        ylabel("Angular velocity [rad/s]")
+        xlabel("Time")
        % plot(W_DOT,T);
 
     end
@@ -45,6 +45,7 @@ for k = 1:length(var_time_step_solver)
     xlabel("Time")
    % plot(W_DOT,T);
 end
+
 
 
 
