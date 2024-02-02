@@ -1,73 +1,36 @@
-% Samantha Botello
-% 1/23
-% Project 1 
-
-
-
 % Initial Conditions 
-w_0 = 4; % Initial Angular Velocity [rad/s]
-J = 1; % Rotational Inertia [kg-m^2]
-b = 1; % Damping Coefficient [N-m-s/rad]
-A = 4; % Constant Applied Torque [N-m]
-
+w_0_values = [0,10]; % Initial Angular Velocity [rad/s]
+J_values = [.01,100]; % Rotational Inertia [kg-m^2]
+b_values = [.1,10]; % Damping Coefficient [N-m-s/rad]
+A_values = [0,100]; % Constant Applied Torque [N-m]
+w_0 = 0;
+A = 0;
+J = 0;
+b = 0;
 set_param('Project1', 'StopTime', '25')
+cpu = [];
+cpu = fixedstep("ode1",".001",w_0_values,J_values,b_values,A_values,cpu);
+cpu
+%Plotting ODE 1 with each stepsize.
 
-%fixedstep_plot
-variabletime_plot
-count = 1
+function [cpu] = fixedstep(solver,stepsize,w_0_values,J_values,b_values,A_values,cpu)
 
-
-time = cpuTime()
-cputime_output = [time(1)]
-for w = 1:(length(time)-1)
-    subval = time(w+1) - time(w)
-    cputime_output(end+1) = subval
-    
-end
-
-function time = cpuTime()
-    time = []
-    tstart = cputime;
-    dT = [0.001, 0.1, 1]; % Time Step [s]
-    solver = ["ode1", "ode4"]; % Fixed Time Step Solver [Euler]
-    for i = 1:length(dT)
-        t  = dT(1,i);
-        for k = 1:length(solver)
-            s = solver(k);
-            fprintf('t = %.4f, s=%s ', t, s)
-            simout = sim("Project1.slx","Solver",s,"FixedStep",string(t));
-            W = simout.w.Data;
-            W_DOT = simout.w_dot.Data;
-            T = simout.tout;
-            figure
-            plot(T,W);
-            title("Angular Velocity vs Time")
-            ylabel("Angular velocity [rad/s]")
-            xlabel("Time")
-     
-            tend = cputime-tstart
-            time(end+1) = tend
-            %plot(W_DOT,T);
-
+    for i = 1:length(w_0_values)
+        w_0 = w_0_values(i);
+        for j = 1:length(J_values)
+            J = J_values(j);
+            for k = 1:length(b_values)
+                b = b_values(k);
+                for l = 1:length(A_values)
+                    A = A_values(l);
+                  
+                    tStart = cputime;
+                    simout = sim("Project1.slx","Solver",solver,"FixedStep",stepsize);
+                    tTotal = cputime - tStart;
+                    cpu(end+1) = tTotal;
+                end
+            end
         end
     end
-end
-
-
-function variabletime_plot()
-    var_time_step_solver = ["ode45", "ode23tb"]; % variable time step
-
-    for k = 1:length(var_time_step_solver)
-        s = var_time_step_solver(k);
-        simout = sim("Project1.slx","Solver",s);
-        W = simout.w.Data;
-        W_DOT = simout.w_dot.Data;
-        T = simout.tout;
-        figure
-        plot(T,W);
-        title("Angular Velocity vs Time")
-        ylabel("Angular velocity [rad/s]")
-        xlabel("Time")
-        % plot(W_DOT,T);
-    end
+   
 end
