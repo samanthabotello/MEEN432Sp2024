@@ -12,10 +12,22 @@ A = 4; % Constant Applied Torque [N-m]
 
 set_param('Project1', 'StopTime', '25')
 
-fixedstep_plot
+%fixedstep_plot
 variabletime_plot
+count = 1
 
-function fixedstep_plot()
+
+time = cpuTime()
+cputime_output = [time(1)]
+for w = 1:(length(time)-1)
+    subval = time(w+1) - time(w)
+    cputime_output(end+1) = subval
+    
+end
+
+function time = cpuTime()
+    time = []
+    tstart = cputime;
     dT = [0.001, 0.1, 1]; % Time Step [s]
     solver = ["ode1", "ode4"]; % Fixed Time Step Solver [Euler]
     for i = 1:length(dT)
@@ -32,11 +44,15 @@ function fixedstep_plot()
             title("Angular Velocity vs Time")
             ylabel("Angular velocity [rad/s]")
             xlabel("Time")
-            % plot(W_DOT,T);
+     
+            tend = cputime-tstart
+            time(end+1) = tend
+            %plot(W_DOT,T);
 
         end
     end
 end
+
 
 function variabletime_plot()
     var_time_step_solver = ["ode45", "ode23tb"]; % variable time step
@@ -55,6 +71,3 @@ function variabletime_plot()
         % plot(W_DOT,T);
     end
 end
-
-
-
