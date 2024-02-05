@@ -1,4 +1,3 @@
-
 % Initial Conditions 
 w_0_values = [0,10]; % Initial Angular Velocity [rad/s]
 J_values = [.01,100]; % Rotational Inertia [kg-m^2]
@@ -11,7 +10,7 @@ J = 0;
 b = 0;
 set_param('Project1', 'StopTime', '25')
 
-%Plotting ODE with each stepsize.
+% Plotting ODE with each stepsize.
 % ode 4
 cpu = [];
 cpu_ode4_001 = fixedstep("ode4",".001",w_0_values,J_values,b_values,A_values,cpu);
