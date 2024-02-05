@@ -37,6 +37,43 @@ xlabel("Step Size")
 ylabel("Cpu Time")
 title("Cpu vs Step Size Ode 1")
 
+% ode 45
+
+cpu_ode45 = variabletime("ode45",w_0_values,J_values,b_values,A_values);
+cpu2_ode45 = variabletime("ode45",w_0_values,J_values,b_values,A_values);
+cpu3_ode45 = variabletime("ode45",w_0_values,J_values,b_values,A_values);
+cpu = [cpu_ode45',cpu2_ode45',cpu3_ode45']
+
+
+% ode 23tb
+
+cpu_ode23tb = variabletime("ode23tb",w_0_values,J_values,b_values,A_values);
+cpu2_ode23tb = variabletime("ode23tb",w_0_values,J_values,b_values,A_values);
+cpu3_ode23tb = variabletime("ode23tb",w_0_values,J_values,b_values,A_values);
+cpu = [cpu_ode23tb',cpu2_ode23tb',cpu3_ode23tb']
+
+    
+% function w_dot_sinusoidal = fcn_sinusoidal(J, b, A ,w, freq, t)
+% tau_damped = b*w;
+% tau = A*sin(freq*t)
+% w_dot = (1/J)*(tau - tau_damped);
+% end
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 % variable time step
 var_time_step_solver = ["ode45", "ode23tb"]; 
 
