@@ -1,8 +1,7 @@
-Download files and execute the P1_demo_code.m script.
+All files are labled at the end with either CODE if they are a Matlab script or MODEL if it is a Simlink model.
 
-We chose to display all of the initial condition combinations on the same graph.
+For part 1 we chose to display all of the initial condition combinations on the same graph.
 The graphs are grouped by solver.
-We are confused on how to implement sinusoidal torque. We will be going to office hours.
 
 ## Week 1 Feedback (5/5): 
 Great job! Keep it up for week 2, you're on the right track! 
