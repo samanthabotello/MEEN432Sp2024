@@ -5,6 +5,7 @@ The graphs are grouped by solver.
 
 For part 2 option 1 the script will generate 30 individual graphs and all graphs are titled according to the conditions they
 represent.
+For options 2 and 3 the graphs are individual graphs, 10 total.
 
 ## Week 1 Feedback (5/5): 
 Great job! Keep it up for week 2, you're on the right track! 
