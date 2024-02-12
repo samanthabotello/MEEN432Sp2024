@@ -3,6 +3,9 @@ All files are labled at the end with either CODE if they are a Matlab script or 
 For part 1 we chose to display all of the initial condition combinations on the same graph.
 The graphs are grouped by solver.
 
+For part 2 option 1 the script will generate 30 individual graphs and all graphs are titled according to the conditions they
+represent.
+
 ## Week 1 Feedback (5/5): 
 Great job! Keep it up for week 2, you're on the right track! 
 The one thing I want to say is to consider adding some sort of logic (either in MATLAB script or Simulink model) to determine whether the applied torque is constant or sinusoidal as this will change inputs to determine applied torque. 
