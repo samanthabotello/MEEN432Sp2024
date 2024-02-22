@@ -7,3 +7,6 @@ Download Project_2_CODE.m
 Make sure track data is what is desired, adjust length, radius, width, and interval between points on straights and curves, respectively delta_s and delta_theta.
 
 execute script
+
+## Week 1 Feedback (3.8/5)
+The MATLAB script "Project2_CODE.m" was not uploaded correctly and cannot be opened. If you would like to resubmit it for better feedback, do so and email me that you did. For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.
