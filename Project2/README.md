@@ -14,5 +14,7 @@ We started with the provided demo simulink model and attempted to implement a dr
 
 We will be going to office hours this week so that we can resolve these issues.
 
+NOTE: When you run the Simulink model set the stop time to 2 seconds otherwise the graph output will be wildly incorrect and unreadable. 
+
 ## Week 1 Feedback (3.8/5)
 The MATLAB script "Project2_CODE.m" was not uploaded correctly and cannot be opened. If you would like to resubmit it for better feedback, do so and email me that you did. For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.
