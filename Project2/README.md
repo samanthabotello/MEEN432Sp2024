@@ -10,11 +10,13 @@ Make sure track data is what is desired, adjust length, radius, width, and inter
 execute script
 
 ### Week2 Description 
-We started with the provided demo simulink model and attempted to implement a driver function that accounts for path curvature and stays on course. The driver function generates a series of points coresponding to the path and calculates the closest point to the current location of the vehicle and then goes two points down the path and calculates the angle between the car and that next point and sets it equal to the steering angle. There were multiple problems that we noticed but could not account for. The first problem was the car starts turning before it is supposed to. The second problem is that the current implementation does not account for the drift angle of the vehicle and this results in a steering angle that takes the car further off course. 
+We started with the provided demo simulink model. We altered the alpha_r and alpha_f equations to match the equations from the slides for vehicle dynamics. These equations now are expressed as arctangents. We attempted to implement a driver function that accounts for path curvature and stays on course. The driver function generates a series of points coresponding to the path and calculates the closest point to the current location of the vehicle and then goes two points down the path and calculates the angle between the car and that next point and sets it equal to the steering angle. There were multiple problems that we noticed but could not account for. The first problem was the car starts turning before it is supposed to. The second problem is that the current implementation does not account for the drift angle of the vehicle and this results in a steering angle that takes the car further off course. 
 
 We will be going to office hours this week so that we can resolve these issues.
 
 NOTE: When you run the Simulink model set the stop time to 2 seconds otherwise the graph output will be wildly incorrect and unreadable. 
+
+We also resubmitted the matlab file for week 1 and sent an email regarding the submission late last week. We apologize for the inconvenience and hope you can accept this new submission. Thanks!
 
 ## Week 1 Feedback (3.8/5)
 The MATLAB script "Project2_CODE.m" was not uploaded correctly and cannot be opened. If you would like to resubmit it for better feedback, do so and email me that you did. For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.
