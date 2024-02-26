@@ -8,7 +8,7 @@ Make sure track data is what is desired, adjust length, radius, width, and inter
 
 execute script
 
-Week2 Description 
+# Week2 Description 
 We started with the provided demo simulink model and attempted to implement a driver function that accounts for path curvature and stays on course. The driver function generates a series of points coresponding to the path and calculates the closest point to the current location of the vehicle and then goes two points down the path and calculates the angle between the car and that next point and sets it equal to the steering angle. There were multiple problems that we noticed but could not account for. The first problem was the car starts turning before it is supposed to. The second problem is that the current implementation does not account for the drift angle of the vehicle and this results in a steering angle that takes the car further off course. 
 
 We will be going to office hours this week so that we can resolve these issues.
