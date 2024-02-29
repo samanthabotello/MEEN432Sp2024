@@ -20,3 +20,6 @@ We also resubmitted the matlab file for week 1 and sent an email regarding the s
 
 ## Week 1 Feedback (3.8/5)
 The MATLAB script "Project2_CODE.m" was not uploaded correctly and cannot be opened. If you would like to resubmit it for better feedback, do so and email me that you did. For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.
+
+## Week 2 Feedback (4.4/5)
+I went over the issues with the Simulink model for this team during our meeting on 2/28 so I'm hoping that was enough feedback for the team. For the final submission, continue to work through the Simulink model and tweaking it so that you are able to stay on track and go around the track as fast as possible. Now that you have the Simulink model, you can animate the rectangular patch from week 1 using the car simulation data and animate the vehicle going around the race track. The team will also need to utilize the raceStat function somewhere in the MATLAB script to see how many loops the vehicle is able to do and to see information regarding the vehicle leaving the track.
