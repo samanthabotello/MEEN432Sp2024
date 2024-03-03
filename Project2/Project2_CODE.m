@@ -8,51 +8,53 @@ delta_theta = 5;
 
 [xp,yp,w] = trackinfo(track_length,track_radius,track_width,delta_s,delta_theta);
 
+simout = sim("Project2_MODEL.slx");
+plot(simout.X.data,simout.Y.data)
 
 
 %% Plot the path as a single animated line
 
-plot(xp,yp)
 
-h = animatedline();
-
-for k = 1:length(xp)
-    addpoints(h,xp(k),yp(k));
-    drawnow; axis equal;
-end
-
-%% Make patch values x-car and y-car
-
-xc = [10 -10 -10 10];
-yc = [5 5 -5 -5];
-
-%patch( xc , yc,'r')
-
-
-%% animate the patch following the track
-
-h = animatedline('Color','r');
-
-patch(xc,yc,'r')                                % initialize patch at starting location
-
-for k = 2:length(xp)
-    
-    delete(findall(gca, 'Type', 'Patch'));   % delete any previous patches on the track
-    
-    rotated_car = rotate_car(xc,yc,k,xp,yp);    % call the rotate function and get new car rotation
-
-    xcm = xp(k)+rotated_car(1,:);            % modify rotated car location to be on track for both x and y
-    ycm = yp(k)+rotated_car(2,:);
-    
-    patch(xcm,ycm,'y')                     % plot the new car
-    drawnow;
-
-    addpoints(h,xp(k),yp(k));
-    drawnow;
-
-    %pause(.01)
-
-end
+% 
+% h = animatedline();
+% 
+% for k = 1:length(xp)
+%     addpoints(h,xp(k),yp(k));
+%     drawnow; axis equal;
+% end
+% 
+% %% Make patch values x-car and y-car
+% 
+% xc = [10 -10 -10 10];
+% yc = [5 5 -5 -5];
+% 
+% %patch( xc , yc,'r')
+% 
+% 
+% %% animate the patch following the track
+% 
+% h = animatedline('Color','r');
+% 
+% patch(xc,yc,'r')                                % initialize patch at starting location
+% 
+% for k = 2:length(xp)
+% 
+%     delete(findall(gca, 'Type', 'Patch'));   % delete any previous patches on the track
+% 
+%     rotated_car = rotate_car(xc,yc,k,xp,yp);    % call the rotate function and get new car rotation
+% 
+%     xcm = xp(k)+rotated_car(1,:);            % modify rotated car location to be on track for both x and y
+%     ycm = yp(k)+rotated_car(2,:);
+% 
+%     patch(xcm,ycm,'y')                     % plot the new car
+%     drawnow;
+% 
+%     addpoints(h,xp(k),yp(k));
+%     drawnow;
+% 
+%     %pause(.01)
+% 
+% end
 
 
 %% Make car rotation function
@@ -68,7 +70,7 @@ end
 %% Track information Function to make track points
 
 
-function [xp,yp,w] = trackinfo(L,R,w,delta_s,delta_theta);
+function [xp,yp,w] = trackinfo(L,R,w,delta_s,delta_theta)
     
     sx1 = linspace(0, L, (L - 0) / delta_s + 1);
     sx2 = linspace(L, 0, (L - 0) / delta_s + 1);
