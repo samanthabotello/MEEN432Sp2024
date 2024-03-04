@@ -18,6 +18,15 @@ NOTE: When you run the Simulink model set the stop time to 2 seconds otherwise t
 
 We also resubmitted the matlab file for week 1 and sent an email regarding the submission late last week. We apologize for the inconvenience and hope you can accept this new submission. Thanks!
 
+### Week3 Description FINAL
+We combined the animation code developed in Week 1 with the Simulink model developed in week 2 to provide visualization of the car going around the track. We used the pure pursuit alhorithim in the driver portion of the Simulink model. Our pure pursuit algorithim first generates a list containing the distance between the current location of the car and every point on the track. The smallest distance is identified and then a lookahead distance is added to that point. The steering angle is then calculated based on the angle between the desired point and the car minus the current heading. There is a compensation factor based on the speed and the wheel Base. Finally the current yaw rate is subtracted from the desired yaw rate. The bounds of the track are represented by black lines and an animation plays that shows the path of the car. The car stays on the track and completes a full lap in approximately 300s. 
+
+#Instructions:
+Download all files and ensure they are in the same directory
+Run the init file
+set desire stop time for simulation
+run Project2_CODE.m
+
 ## Week 1 Feedback (3.8/5)
 The MATLAB script "Project2_CODE.m" was not uploaded correctly and cannot be opened. If you would like to resubmit it for better feedback, do so and email me that you did. For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.
 
