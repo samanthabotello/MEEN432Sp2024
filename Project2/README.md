@@ -21,7 +21,7 @@ We also resubmitted the matlab file for week 1 and sent an email regarding the s
 ### Week3 Description FINAL
 We combined the animation code developed in Week 1 with the Simulink model developed in week 2 to provide visualization of the car going around the track. We used the pure pursuit alhorithim in the driver portion of the Simulink model. Our pure pursuit algorithim first generates a list containing the distance between the current location of the car and every point on the track. The smallest distance is identified and then a lookahead distance is added to that point. The steering angle is then calculated based on the angle between the desired point and the car minus the current heading. There is a compensation factor based on the speed and the wheel Base. Finally the current yaw rate is subtracted from the desired yaw rate. The bounds of the track are represented by black lines and an animation plays that shows the path of the car. The car stays on the track and completes a full lap in approximately 300s. 
 
-####Instructions:
+#### Instructions:
 Download all files and ensure they are in the same directory
 Run the init file
 set desire stop time for simulation
