@@ -24,9 +24,9 @@ We combined the animation code developed in Week 1 with the Simulink model devel
 NOTE: Make sure to use the init file from this repository because our code relies on the wheelbase calculated within the init file.
 
 #### Instructions:
-Download all files and ensure they are in the same directory
-Run the init file
-set desire stop time for simulation
+Download all files and ensure they are in the same directory\
+Run the init file\
+set desire stop time for simulation\
 run Project2_CODE.m
 
 ## Week 1 Feedback (3.8/5)
