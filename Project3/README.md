@@ -4,7 +4,7 @@ We focused on changing the braking function and tuning the PID controller to mak
 We all worked on the project together in a zoom call.
 
 Download all files and execute them in the following order.\
-##RUN ORDER:\
+## RUN ORDER:\
 init.m\
 initDriveCycle.m\
 p3_runsim.m\
