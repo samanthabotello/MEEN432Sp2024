@@ -7,4 +7,4 @@ Download all files and execute them in the following order.
 ## RUN ORDER
 init.m\
 initDriveCycle.m\
-p3_runsim.m\
+p3_runsim.m
