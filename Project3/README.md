@@ -2,11 +2,11 @@
 We chose to put the two drive cycles in seperate files. Run the project3 init file then run one of the drive cycle files then run the Project3_CODE. After the simulation completes reapeat the process with the other drive cycle. For the Urban drive cycle set the simulation stop time to 1369s and for the Highway cycle set the stop time to 765s. We made updates to the original model provided. We modeled the braking system for times when the angular velocity is/isn't equal to 0 rad/s. In addition, we added regenerative braking. We removed the powertrain system and added in an electric motor drive. The electric motor drive consists of an electric motor and batttery subsystem. The drive takes inputs of throttle and motor speed. The outputs include motor torque and motor inertia. The electric motor systems uses battery voltage, throttle (alpha), and motor speed and outputs current, motor torque, and motor inertia. The battery takes input current and outputs battery voltage. We followled the provided battery and electric motor slides to construct our model. 
 *We all worked on project in a zoom call
 ## RUN ORDER
-Project3_init.m/
-initUrbanCycle.m/
-Proect3_CODE.m/
-initHighwayCycle.m/
-Proect3_CODE.m/
+Project3_init.m\
+initUrbanCycle.m\
+Proect3_CODE.m\
+initHighwayCycle.m\
+Proect3_CODE.m\
 
 # 3/24/2024 Submition 
 We focused on changing the braking function and tuning the PID controller to make the car velocity always stay within the required drive cycle bounds. First we ran the provided file and observed the behaviour. The velocity of the car went outside of the bounds at multiple locations. We noticed that the car was not acclerating or braking fast enough. To achieve desired vehicle performance we increased the proportional constant in the PID controller to .4 and we added an integral constant of .25 to make the driver model continuously attempt to correct its velocity. We decided to use the exact sign function in the braking model.
