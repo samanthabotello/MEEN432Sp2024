@@ -9,7 +9,7 @@ path.l_st = track_length;
 path.radius = track_radius;
 P4init;
 [xp,yp] = trackinfo(track_length,track_radius,0,delta_s,delta_theta);
-set_param('Project4_MODEL', 'StopTime', '200')
+set_param('Project4_MODEL', 'StopTime', '3600')
 simout = sim("Project4_MODEL.slx");
 X = simout.X.data;
 Y = simout.Y.data;
